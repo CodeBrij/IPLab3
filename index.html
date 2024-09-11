@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rent-a-Read</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Grey+Qo&family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Ensure navbar is visible and overlaps video */
+        .navbar {
+            z-index: 1000; /* Higher z-index to ensure it appears above the video */
+            background-color: rgba(0, 0, 0, 0.6); /* Transparent background for visibility */
+        }
+
+        /* Hero section styling to overlap with video */
+        #home {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 999; /* Ensures it overlaps video */
+            background-color: rgba(0, 0, 0, 0.5); /* Transparent overlay */
+        }
+
+        /* To ensure the navbar text is clearly visible */
+        .navbar-nav .nav-link {
+            color: white !important;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Video Background -->
+    <div class="position-relative">
+        <video autoplay muted loop class="w-100" style="object-fit: cover; height: 100vh;">
+            <source src="bg.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div class="position-absolute top-0 start-0 w-100 h-100 bg-dark opacity-50"></div>
+    </div>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark position-fixed w-100">
+        <div class="container-fluid px-5">
+            <a class="navbar-brand fw-bold fs-3" href="#">Rent-a-Read</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#testimonial">Testimonial</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Home Section (Overlapping Hero Section) -->
+    <section id="home" class="text-center text-white d-flex flex-column justify-content-center align-items-center">
+        <h1 class="display-4 fw-bold mb-3">Welcome to Rent-a-Read</h1>
+        <p class="lead mb-4">Your one-stop solution for renting and reading your favorite books online.</p>
+        <a href="#about" class="btn btn-warning btn-lg rounded-pill">Learn More</a>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-5">
+        <div class="container">
+            <h2 class="text-center text-warning mb-4">About Us</h2>
+            <p class="text-center text-muted mb-5">
+                At Rent-a-Read, we believe that knowledge should be accessible to everyone. We offer a vast collection of books across various genres available for rent at affordable prices. Our mission is to foster a love for reading by making it convenient and accessible.
+            </p>
+            <!-- About Cards -->
+            <div class="row g-4">
+                <div class="col-lg-4 d-flex align-items-stretch">
+                    <div class="card bg-light shadow-lg">
+                        <img src="book.png" class="card-img-top" alt="Book Variety">
+                        <div class="card-body">
+                            <h5 class="card-title text-center">Choose from Variety of Books</h5>
+                            <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis excepturi nulla a dignissimos natus, facilis reiciendis recusandae nobis minus.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 d-flex align-items-stretch">
+                    <div class="card bg-light shadow-lg">
+                        <img src="delivery.png" class="card-img-top" alt="Book Delivery">
+                        <div class="card-body">
+                            <h5 class="card-title text-center">Get Your Loved Books at Doorstep</h5>
+                            <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis excepturi nulla a dignissimos natus, facilis reiciendis recusandae nobis minus.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 d-flex align-items-stretch">
+                    <div class="card bg-light shadow-lg">
+                        <img src="home.jpg" class="card-img-top" alt="Read at Home">
+                        <div class="card-body">
+                            <h5 class="card-title text-center">Read at the Comfort of Your Home</h5>
+                            <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis excepturi nulla a dignissimos natus, facilis reiciendis recusandae nobis minus.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonial Section -->
+    <section id="testimonial" class="py-5 bg-dark text-white">
+        <div class="container">
+            <h2 class="text-center text-warning mb-5">Testimonials</h2>
+            <div class="row g-4">
+                <div class="col-md-6">
+                    <div class="p-4 bg-secondary rounded shadow">
+                        <p class="fst-italic">"Rent-a-Read has completely changed the way I access books. The collection is extensive and the service is seamless!"</p>
+                        <h5 class="text-warning">- Jane Doe</h5>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="p-4 bg-secondary rounded shadow">
+                        <p class="fst-italic">"Affordable and convenient. I love being able to read new releases without breaking the bank."</p>
+                        <h5 class="text-warning">- John Smith</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-5">
+        <div class="container">
+            <h2 class="text-center text-warning mb-4">Contact Us</h2>
+            <form class="w-75 mx-auto">
+                <div class="mb-3">
+                    <input type="text" class="form-control form-control-lg" placeholder="Your Name" required>
+                </div>
+                <div class="mb-3">
+                    <input type="email" class="form-control form-control-lg" placeholder="Your Email" required>
+                </div>
+                <div class="mb-4">
+                    <textarea class="form-control form-control-lg" rows="5" placeholder="Your Message" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-warning btn-lg w-100">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-center text-white py-3">
+        <p>&copy; 2024 Rent-a-Read. All rights reserved.</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
